@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Blog{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blogs/index.css" %}">
+{% endblock %}
+
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blogs/images/foto.jpg" %}" alt "Saas - The Author Of This Blog" />
+            <h2>SAAS_VUUV'S BLOG</h2>
+        </header>
+        <p>Discover My Blog!</p>
+    </section>
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+            {% for post in posts %}
+              {% include "blogs/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>More</p>
+    </section>
+{% endblock %}
+
